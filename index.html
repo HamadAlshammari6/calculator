@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمع الأرقام</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #d3e8ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .inputs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            appearance: none; /* لإخفاء الأسهم */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="inputs">
+            <input type="number" id="num1" placeholder="أدخل الرقم 1">
+            <input type="number" id="num2" placeholder="أدخل الرقم 2">
+        </div>
+        <button onclick="sumNumbers()">جمع</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function sumNumbers() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerHTML = "الرجاء إدخال أرقام صحيحة في المربعين.";
+            } else {
+                let sum = num1 + num2;
+                document.getElementById('result').innerHTML = "الناتج: " + sum;
+            }
+        }
+    </script>
+
+</body>
+</html>
